@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FoodEquals
 {
@@ -12,12 +13,27 @@ namespace FoodEquals
 
             //DefaultStaticObjectBoolEqualsOfDotNet();
 
+            ValueTypeEquality();
+        }
+
+        private static void ValueTypeEquality()
+        {
             var banana = new FoodItem("Banana", FoodGroup.Fruit);
+            var bananaTwo = new FoodItem("Banana", FoodGroup.Fruit);
             var chocolate = new FoodItem("Chocolate", FoodGroup.Vegetables);
+            var bananaSmoothie = new FoodItem("Chocolate Smoothie", FoodGroup.Fruit);
 
             var areEqual = object.Equals(banana, chocolate);
 
             Console.WriteLine(areEqual);
+            Console.WriteLine(banana == bananaSmoothie);
+
+            var dictionaryOfFoodGroups = new Dictionary<FoodItem, string>();
+            Console.WriteLine(banana.GetHashCode());
+            dictionaryOfFoodGroups.Add(banana, banana.Name);
+            //This line should throw an exception as both banana and bananaTwo should have same hash code
+            Console.WriteLine(bananaTwo.GetHashCode());
+            dictionaryOfFoodGroups.Add(bananaTwo, bananaTwo.Name);
         }
 
         private static void StringEquality()

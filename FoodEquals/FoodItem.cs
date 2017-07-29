@@ -30,6 +30,24 @@ namespace FoodEquals
             return false;
         }
 
+        //Returns a 32-bit hash of the value of the object
+        //Hash tables require that if x.Equals(y) then we must have
+        //x.GetHashCode() == y.GetHashCode()
+        public override int GetHashCode()
+        {
+            //using exclusive Or operator XOR
+            return name.GetHashCode() ^ group.GetHashCode();
+        }
+
+        public static bool operator ==(FoodItem lhs, FoodItem rhs)
+        {
+            return lhs.Equals(rhs);
+        }
+
+        public static bool operator !=(FoodItem lhs, FoodItem rhs)
+        {
+            return !lhs.Equals(rhs);
+        }
 
 
         public override string ToString()
