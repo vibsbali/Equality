@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodEquals", "FoodEquals\Fo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EqualityInt", "EqualityInt\EqualityInt.csproj", "{996A8EF8-2477-4506-9956-045216B01829}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Equality", "Equality\Equality.csproj", "{C2BB7C00-B3A7-46C1-9598-27E531D881E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{996A8EF8-2477-4506-9956-045216B01829}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{996A8EF8-2477-4506-9956-045216B01829}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{996A8EF8-2477-4506-9956-045216B01829}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2BB7C00-B3A7-46C1-9598-27E531D881E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2BB7C00-B3A7-46C1-9598-27E531D881E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2BB7C00-B3A7-46C1-9598-27E531D881E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2BB7C00-B3A7-46C1-9598-27E531D881E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
