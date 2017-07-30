@@ -65,7 +65,7 @@
 
     public sealed class CookedFood : Food
     {
-        private string cookingMethod;
+        private readonly string cookingMethod;
         public string CookingMethod => cookingMethod;
 
         public CookedFood(string cookingMethod, string name, FoodGroup foodGroup)
@@ -78,5 +78,37 @@
         {
             return $"{cookingMethod} {Name}";
         }
+
+        public override bool Equals(object obj)
+        {
+            if (!base.Equals(obj))
+            {
+                return false;
+            }
+
+            CookedFood rhs = obj as CookedFood;
+            if (rhs == null)
+            {
+                return false;
+            }
+
+            return this.cookingMethod == rhs.cookingMethod;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode() ^ this.cookingMethod.GetHashCode();
+        }
+
+        public static bool operator ==(CookedFood x, CookedFood y)
+        {
+            return object.Equals(x, y);
+        }
+
+        public static bool operator !=(CookedFood x, CookedFood y)
+        {
+            return !object.Equals(x, y);
+        }
+
     }
 }
