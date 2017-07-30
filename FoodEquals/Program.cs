@@ -13,7 +13,13 @@ namespace FoodEquals
 
             //DefaultStaticObjectBoolEqualsOfDotNet();
 
-            ValueTypeEquality();
+            //ValueTypeEquality();
+
+            var apple = new Food("apple", FoodGroup.Fruit);
+            var stewedApple = new CookedFood("stewed", "apple", FoodGroup.Fruit);
+
+            Console.WriteLine(apple);
+            Console.WriteLine(stewedApple);
         }
 
         private static void ValueTypeEquality()
@@ -49,9 +55,9 @@ namespace FoodEquals
 
         private static void DefaultVirtualBoolEqualsOfDotNet()
         {
-            var banana = new Food("Banana");
-            var banana2 = new Food("Banana");
-            var chocolate = new Food("Chocolate");
+            var banana = new Food("Banana", FoodGroup.Fruit);
+            var banana2 = new Food("Banana", FoodGroup.Fruit);
+            var chocolate = new Food("Chocolate", FoodGroup.Sweets);
 
             Console.WriteLine(banana.Equals(chocolate));
             Console.WriteLine(banana.Equals(banana2));
@@ -59,9 +65,9 @@ namespace FoodEquals
 
         private static void DefaultStaticObjectBoolEqualsOfDotNet()
         {
-            var banana = new Food("Banana");
-            var banana2 = new Food("Banana");
-            var chocolate = new Food("Chocolate");
+            var banana = new Food("Banana", FoodGroup.Fruit);
+            var banana2 = new Food("Banana", FoodGroup.Fruit);
+            var chocolate = new Food("Chocolate", FoodGroup.Sweets);
 
             object nullBanana = null;
             object nullBanana2 = null;

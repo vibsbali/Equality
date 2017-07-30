@@ -12,7 +12,7 @@ namespace FoodEquals
 
         public FoodItem(string name, FoodGroup group)
         {
-            this.name = name;
+            this.name = name;   
             this.group = group;
         }
 
@@ -48,7 +48,6 @@ namespace FoodEquals
         {
             return !lhs.Equals(rhs);
         }
-
 
         public override string ToString()
         {
