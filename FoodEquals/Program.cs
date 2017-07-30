@@ -5,7 +5,7 @@ namespace FoodEquals
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             //ReferenceEquality();
 
@@ -17,9 +17,66 @@ namespace FoodEquals
 
             var apple = new Food("apple", FoodGroup.Fruit);
             var stewedApple = new CookedFood("stewed", "apple", FoodGroup.Fruit);
+            var bakedApple = new CookedFood("baked", "apple", FoodGroup.Fruit);
+            var stewedApple2 = new CookedFood("stewed", "apple", FoodGroup.Fruit);
+            var apple2 = new Food("apple", FoodGroup.Fruit);
 
-            Console.WriteLine(apple);
-            Console.WriteLine(stewedApple);
+            DisplayWhetherEqualUsingEqualityOperator(apple, stewedApple);
+            DisplayWhetherEqualUsingEqualityOperator(stewedApple, bakedApple);
+            DisplayWhetherEqualUsingEqualityOperator(stewedApple, stewedApple2);
+            DisplayWhetherEqualUsingEqualityOperator(apple, apple2);
+            DisplayWhetherEqualUsingEqualityOperator(apple, apple);
+
+            Console.WriteLine("Using class's equals method");
+            DisplayWhetherEqualUsingFoodsEquality(apple, stewedApple);
+            DisplayWhetherEqualUsingFoodsEquality(stewedApple, bakedApple);
+            DisplayWhetherEqualUsingFoodsEquality(stewedApple, stewedApple2);
+            DisplayWhetherEqualUsingFoodsEquality(apple, apple2);
+            DisplayWhetherEqualUsingFoodsEquality(apple, apple);
+
+            Console.WriteLine("Using static Object.Equals");
+            DisplayWhetherEqualUsingStaticObjectEquality(apple, stewedApple);
+            DisplayWhetherEqualUsingStaticObjectEquality(stewedApple, bakedApple);
+            DisplayWhetherEqualUsingStaticObjectEquality(stewedApple, stewedApple2);
+            DisplayWhetherEqualUsingStaticObjectEquality(apple, apple2);
+            DisplayWhetherEqualUsingStaticObjectEquality(apple, apple);
+        }
+
+        static void DisplayWhetherEqualUsingEqualityOperator(Food food1, Food food2)
+        {
+            if (food1 == food2)
+            {
+                Console.WriteLine($"{food1} is == {food2}");
+            }
+            else
+            {
+                Console.WriteLine($"{food1} is != {food2}");
+            }
+        }
+
+        static void DisplayWhetherEqualUsingFoodsEquality(Food food1, Food food2)
+        {
+            if (food1.Equals(food2))
+            {
+                Console.WriteLine($"{food1} is equal to {food2}");
+            }
+            else
+            {
+                Console.WriteLine($"{food1} is not equal to {food2}");
+            }
+        }
+
+        //This will use the Food's equal's implementation
+        static void DisplayWhetherEqualUsingStaticObjectEquality(Food food1, Food food2)
+        {
+            if (object.Equals(food1, food2))
+            {
+                Console.WriteLine($"{food1} is equal to {food2}");
+            }
+            else
+            {
+                Console.WriteLine($"{food1} is not equal to {food2}");
+            }
         }
 
         private static void ValueTypeEquality()
