@@ -72,7 +72,7 @@ namespace Equality
                 throw new ArgumentNullException(nameof(obj));
             if (!(obj is CalorieCount))
                 throw new ArgumentException("Expected CalorieCount instance", "obj");
-            return CompareTo((CalorieCount)obj);
+            return CompareTo((CalorieCount)obj); 
         }
 
         public bool Equals(CalorieCount other)
