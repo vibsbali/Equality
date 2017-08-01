@@ -16,7 +16,7 @@
 
         public override string ToString()
         {
-            return name;
+            return $"{name} {foodGroup}";
         }
 
         public static bool operator ==(Food x, Food y)
